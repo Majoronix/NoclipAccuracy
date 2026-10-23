@@ -1,0 +1,23 @@
+name: Build NoclipAccuracy (Windows)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    name: Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Build the mod
+        uses: geode-sdk/build-geode-mod@main
+        id: build
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: NoclipAccuracy-Windows
+          path: ${{ steps.build.outputs.build-output }}
