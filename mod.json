@@ -7,9 +7,9 @@
 	},
 	"id": "majoronix.noclip-accuracy",
 	"name": "Noclip Accuracy",
-	"version": "v1.1.0",
+	"version": "v1.2.0",
 	"developer": "Majoronix",
-	"description": "ES: Noclip con porcentaje de precisión (accuracy), golpes y precisión mínima opcional. / EN: Noclip with accuracy percentage, hit counter and optional minimum accuracy.",
+	"description": "ES: Noclip con porcentaje de precision (accuracy), golpes y precision minima opcional. / EN: Noclip with accuracy percentage, hit counter and optional minimum accuracy.",
 	"settings": {
 		"enabled": {
 			"type": "bool",
@@ -31,7 +31,7 @@
 		},
 		"accuracy-mode": {
 			"type": "string",
-			"name": "Cálculo de precisión / Accuracy mode",
+			"name": "Calculo de precision / Accuracy mode",
 			"description": "'Per attempt' se reinicia en cada intento; 'Whole level' acumula todo el nivel. / 'Per attempt' resets every attempt; 'Whole level' accumulates the whole level.",
 			"default": "Per attempt",
 			"one-of": [
@@ -41,8 +41,8 @@
 		},
 		"min-accuracy": {
 			"type": "float",
-			"name": "Precisión mínima (%) / Minimum accuracy (%)",
-			"description": "Si tu precisión en el intento baja de este valor, mueres de verdad (0 = nunca). / If your attempt accuracy drops below this, you really die (0 = never).",
+			"name": "Precision minima (%) / Minimum accuracy (%)",
+			"description": "Si tu precision en el intento baja de este valor, mueres de verdad (0 = nunca). / If your attempt accuracy drops below this, you really die (0 = never).",
 			"default": 0.0,
 			"min": 0.0,
 			"max": 100.0,
@@ -55,7 +55,7 @@
 		"grace-ticks": {
 			"type": "int",
 			"name": "Ticks de gracia / Grace ticks",
-			"description": "Ticks al inicio del intento durante los que NO se exige la precisión mínima. / Ticks at the start of an attempt where the minimum is not enforced.",
+			"description": "Ticks al inicio del intento durante los que NO se exige la precision minima. / Ticks at the start of an attempt where the minimum is not enforced.",
 			"default": 240,
 			"min": 0,
 			"max": 2400,
@@ -67,19 +67,19 @@
 		},
 		"show-indicator": {
 			"type": "bool",
-			"name": "Mostrar precisión en pantalla / Show accuracy on screen",
-			"description": "Muestra la precisión (%) durante el nivel. / Shows accuracy (%) during the level.",
+			"name": "Mostrar precision en pantalla / Show accuracy on screen",
+			"description": "Muestra la precision (%) durante el nivel. / Shows accuracy (%) during the level.",
 			"default": true
 		},
 		"show-hits": {
 			"type": "bool",
 			"name": "Mostrar golpes / Show hits",
-			"description": "Añade el número de golpes (choques seguidos cuentan como uno). / Adds the number of hits (consecutive collisions count as one).",
+			"description": "Anade el numero de golpes (choques seguidos cuentan como uno). / Adds the number of hits (consecutive collisions count as one).",
 			"default": true
 		},
 		"color-by-accuracy": {
 			"type": "bool",
-			"name": "Color según la precisión / Color by accuracy",
+			"name": "Color segun la precision / Color by accuracy",
 			"description": "Verde (95%+), amarillo (80%+) o rojo. / Green (95%+), yellow (80%+) or red.",
 			"default": true
 		},
@@ -99,14 +99,14 @@
 		"show-result": {
 			"type": "bool",
 			"name": "Mostrar resultado al completar / Show result on completion",
-			"description": "Muestra una notificación con la precisión al completar el nivel. / Shows a notification with your accuracy when you complete the level.",
+			"description": "Muestra una notificacion con la precision al completar el nivel. / Shows a notification with your accuracy when you complete the level.",
 			"default": true
 		},
 		"indicator-corner": {
 			"type": "string",
-			"name": "Posición del indicador / Indicator position",
+			"name": "Posicion del indicador / Indicator position",
 			"description": "Esquina de la pantalla. / Screen corner.",
-			"default": "Top-left",
+			"default": "Top-right",
 			"one-of": [
 				"Top-left",
 				"Top-right",
@@ -136,10 +136,16 @@
 		},
 		"reset-key": {
 			"type": "keybind",
-			"name": "Atajo para reiniciar la precisión / Reset accuracy shortcut",
-			"description": "Reinicia los contadores de precisión del nivel y del intento. / Resets the level and attempt accuracy counters.",
+			"name": "Atajo para reiniciar la precision / Reset accuracy shortcut",
+			"description": "Reinicia los contadores de precision del nivel y del intento. / Resets the level and attempt accuracy counters.",
 			"default": [],
 			"category": "gameplay"
+		},
+		"debug-notify": {
+			"type": "bool",
+			"name": "Avisos de diagnostico / Diagnostic notices",
+			"description": "Muestra avisos al cargar el nivel y al absorber el primer golpe de cada intento. Desactivalo cuando compruebes que funciona. / Shows notices on level load and on the first absorbed hit of each attempt. Turn off once you confirm it works.",
+			"default": true
 		}
 	}
 }
